@@ -1,0 +1,10 @@
+version: "3"
+services:
+    peacockserver:
+        ports:
+            - 4444:3000
+        build: .
+        volumes:
+        - ./data:/Peacock
+        environment:
+          - PORT=3000
