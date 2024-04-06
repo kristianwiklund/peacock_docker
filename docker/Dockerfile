@@ -1,10 +1,10 @@
-# Ubuntu is probably not the most optimal base image, but it works and is easyx
+# Ubuntu is probably not the most optimal base image, but it works and is easy to use when one need to troubleshoot
 FROM ubuntu:23.10
 
 # basic sanity, install base tooling +  override the OS monopoly on pip
-# (I don't think we need python, this is from an old image)
+# 
 
-RUN apt-get update && apt-get -yq install --no-install-recommends python3 python3-pip tzdata && ln -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get update && apt-get -yq install --no-install-recommends python3 python3-pip tzdata rsync && ln -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 ENV TZ="Europe/Stockholm"
 RUN mkdir -p /root/.config/pip
 COPY pip.conf /root/.config/pip/
