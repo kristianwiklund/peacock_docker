@@ -17,7 +17,7 @@ RUN curl -o installnvm.sh https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/i
 RUN bash -f installnvm.sh
 RUN nvm install 20
 RUN corepack enable
-RUN mkdir -p /Peacock
+RUN mkdir -p /Peacock /Plugins
 COPY start.sh /
 
 ENTRYPOINT /start.sh

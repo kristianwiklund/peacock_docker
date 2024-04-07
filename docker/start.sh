@@ -31,10 +31,12 @@ if [ ! -d /Peacock/.git ]; then
     git init
     git remote add origin https://github.com/thepeacockproject/Peacock
     info_message "Pulling Peacock from github"
-    git pull origin master
+    git pull origin ${BRANCH}
+    git checkout ${BRANCH}
 else
     info_message "Checking for Peacock updates"
-    cd /Peacock; git pull origin master
+    cd /Peacock; git pull origin ${BRANCH}
+    git checkout ${BRANCH}
 fi
 
 # Build the server
@@ -61,6 +63,10 @@ mkdir -p /Peacock/backups
 name=userdata_$(date '+%Y-%m-%d_%H%M')
 cd /Peacock && tar zcvf /Peacock/backups/$name.tgz userdata
 
+# plugin handling
+
+info_message "Installing plugins"
+cp -nv /Plugins/* /Peacock/
 
 
 info_message "Starting Peacock"
