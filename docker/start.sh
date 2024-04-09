@@ -66,7 +66,7 @@ cd /Peacock && tar zcvf /Peacock/backups/$name.tgz userdata
 # plugin handling
 
 info_message "Installing plugins"
-cp -nv /Plugins/* /Peacock/
+cp -v /Plugins/* /Peacock/
 
 
 info_message "Starting Peacock"
