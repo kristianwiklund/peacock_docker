@@ -31,6 +31,7 @@ Each server version will have its own configuration directory, no files are shar
 
 Add the plugin you want to run to the "plugins" directory. It will be deployed automatically.
 
-## Selecting server port
+## Automatic backups
 
-This is broken.
+Player data is zipped and stored in a "backups" folder on each start of the container. This is found in "data/<branch>/backups/"
+
