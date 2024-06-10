@@ -7,5 +7,6 @@ userdata/
 options.ini
 node-*
 Peacock-*
-docker/data/
-docker/plugins/
+data/
+plugins/
+data-bak
